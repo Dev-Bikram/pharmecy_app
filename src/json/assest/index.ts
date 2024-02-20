@@ -56,6 +56,7 @@ import map_demo from "../../public/images/map_demo.jpg";
 import markerbg from "../../public/images/markerbg.png";
 import payOrder from "../../public/images/pay_your_order.svg";
 import DummyAuthBg from "../../public/images/preview.jpg";
+import editmedicine from "../../public/images/editmedicine.svg";
 
 const assest = {
   Logo,
@@ -109,6 +110,7 @@ const assest = {
   payOrder,
   avatar_demo_frame,
   map_demo,
-  DummyAuthBg
+  DummyAuthBg,
+  editmedicine
 };
 export default assest;

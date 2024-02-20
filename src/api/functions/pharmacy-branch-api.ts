@@ -1,7 +1,6 @@
 import axiosInstance from "api/axiosInstance"
 import { endpoints } from "api/endpoints"
-import { toast } from "sonner"
-import { IBranchDetailsResponse, IListPharmacyBranchPayload, IpharmacyBranchListResponse } from "typescript/interface/pharmacy-branch.interface"
+import { IBranchDetailsResponse, IListPharmacyBranchPayload, IpharmacyBranchListResponse , IgetAssignedAll, IgetAssignedEach} from "typescript/interface/pharmacy-branch.interface"
 
 export const fetchpharmacybranchlists = async (data: IListPharmacyBranchPayload) => {
     try {
@@ -21,3 +20,14 @@ export const getBranchdetails = async (id: number) => {
         console.log(error);
     }
 }
+
+export const getAssignedAll = async () =>{
+    try {
+       const response = await axiosInstance.get<IgetAssignedAll>(endpoints.branch.assignedAll)
+       return response
+    }
+    catch(error){
+         console.log(error)
+    }
+}
+

@@ -32,6 +32,7 @@ import { NoticationData, NoticationDocs } from "typescript/interface/notificatio
 import { Divider } from "@mui/material";
 import dayjs from "dayjs";
 import MailIcon from "ui/Icons/MailIcon";
+import MedicineIcon from "ui/Icons/MedicineIcon";
 
 
 interface Props {
@@ -211,6 +212,21 @@ export default function Header(props: Props) {
                     Reports
                   </NavLink>
                 </ListItem>
+
+                <ListItem disablePadding>
+                    <NavLink
+                      to="/dashboard/medicines/"
+                      className={({ isActive, isPending }) =>
+                        isActive ||
+                        window.location.pathname.includes("medicines")
+                          ? "navigate_btn active"
+                          : "navigate_btn"
+                      }
+                    >
+                      <MedicineIcon />
+                       Medicines
+                    </NavLink>
+                  </ListItem>
               </List>
             </Box>
           ) : null}

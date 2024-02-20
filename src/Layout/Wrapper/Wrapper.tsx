@@ -10,6 +10,7 @@ import { WrapperStyle } from "styles/StyledComponents/WrapperStyle";
 interface WrapperProps {
   children: JSX.Element | JSX.Element[];
   defaultHeader?: boolean;
+  headerComponent?: React.ReactNode;
 }
 
 /**

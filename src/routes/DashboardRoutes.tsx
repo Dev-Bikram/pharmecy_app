@@ -41,6 +41,7 @@ const Reports = React.lazy(() => import("pages/dashboard/reports/Reports"));
 const ForgetPassword = React.lazy(
   () => import("pages/auth/forget/Forgetpass")
 );
+const Medicine = React.lazy(() => import("pages/dashboard/medicine/Medicine"));
 const Signup = React.lazy(() => import("pages/auth/Signup/Signup"));
 const Notification = React.lazy(() => import("pages/notifications/Notification"));
 const Pharmacyinformation = React.lazy(() => import("pages/pharmacy/Pharmacyinformation"));
@@ -210,6 +211,17 @@ const DashBoardRoutes: RouteObject[] = [
     element: (
       <PageLoaders>
         <PayoutOverview />
+      </PageLoaders>
+    )
+  },
+
+  {
+    path: "/dashboard/medicines",
+    element: (
+      <PageLoaders>
+        <ProtectedRouteWrapper>
+          <Medicine />
+        </ProtectedRouteWrapper>
       </PageLoaders>
     )
   },

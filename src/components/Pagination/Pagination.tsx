@@ -5,13 +5,6 @@ import { PaginationWrapper } from "styles/StyledComponents/PaginationWrapper";
 
 
 
-  // interface PaginationSectionProps {
-  //   onChangeLimit?: ((event: SelectChangeEvent<any>, child: React.ReactNode) => void)
-  //   limit?: number;
-  //   count?: number;
-  //   setPage?: ((event: React.ChangeEvent<unknown>, page: number) => void)
-  //   page?: number;
-  // }
   interface PaginationSectionProps {
     onChangeLimit?:
       | ((event: SelectChangeEvent<any>, child: React.ReactNode) => void)
@@ -22,6 +15,8 @@ import { PaginationWrapper } from "styles/StyledComponents/PaginationWrapper";
       | ((event: React.ChangeEvent<unknown>, page: number) => void)
       | undefined;
     page?: number;
+
+
   }
 
 
@@ -36,11 +31,11 @@ function PaginationSection(
     page
   }: PaginationSectionProps
 ) {
-  const [number, setnumber] = React.useState("");
+  // const [number, setnumber] = React.useState("");
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setnumber(event.target.value as string);
-  };
+  // const handleChange = (event: SelectChangeEvent) => {
+  //   setnumber(event.target.value as string);
+  // };
   return (
     <PaginationWrapper>
       <Box className="paginationsection">
@@ -55,14 +50,16 @@ function PaginationSection(
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    value={number}
+                    value={limit}
                     displayEmpty
-                    onChange={handleChange}
+                    onChange={onChangeLimit}
+                    defaultValue={5}
                   >
-                    <MenuItem value="">5</MenuItem>
+                    <MenuItem value={5}>5</MenuItem>
                     <MenuItem value={10}>10</MenuItem>
                     <MenuItem value={20}>20</MenuItem>
                     <MenuItem value={30}>30</MenuItem>
+                    <MenuItem value={50}>50</MenuItem>
                   </Select>
                 </FormControl>
               </Box>
@@ -79,6 +76,7 @@ function PaginationSection(
           variant="outlined"
           shape="rounded"
           page={page}
+          
           
           
           />

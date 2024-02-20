@@ -125,6 +125,16 @@ export interface IpharmacyBranchListResponse extends BaseApiResponse {
   data: IpharmacyBranchListData;
 }
 
+export interface IgetAssignedEach {
+  id: number;
+  name: string;
+}
+
+export interface IgetAssignedAll extends BaseApiResponse {
+  data: IgetAssignedEach[];
+}
+
+
 //Upload a csv file to upload branchs
 export interface IbranchBulkUploadResponse extends BaseApiResponse {
   data: BaseApiResponse;
